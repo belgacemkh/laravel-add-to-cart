@@ -19,3 +19,9 @@ Route::get('/', [\App\Http\Controllers\ProductController::class, 'index'])
 Route::post('/', [\App\Http\Controllers\CartController::class, 'store'])
     ->name('cart.store');
 
+Route::get('index2', [\App\Http\Controllers\ProductController::class, 'indexWithLivewire'])
+    ->name('products.indexWithLivewire');
+
+Route::delete('/', [\App\Http\Controllers\CartController::class, 'delete'])
+    ->name('cart.delete');   
+

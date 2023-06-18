@@ -10,9 +10,16 @@ class ProductController extends Controller
     
     public function index()
     {
-        $products = Product::paginate(4);
+        $products = Product::all();
         $cart = \Cart::getContent();
         
         return view('products.index',compact('products','cart'));
+    }
+    
+    public function indexWithLivewire()
+    {
+        
+        
+        return view('products.indexWithLivewire');
     }
 }

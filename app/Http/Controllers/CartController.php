@@ -19,4 +19,11 @@ class CartController extends Controller
 
         return redirect()->route('products.index')->with('message', 'Successfully added');
     }
+    
+    public function delete(Request $request)
+    {
+       \Cart::remove(intval($request->product_id));
+
+       return redirect()->route('products.index')->with('message', 'Successfully product delelted');
+    }
 }

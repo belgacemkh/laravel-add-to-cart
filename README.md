@@ -20,8 +20,21 @@ php artisan vendor:publish --provider="Darryldecode\Cart\CartServiceProvider" --
 
 ## Retrieve the quantity of products ordered
 
-Cart::getTotalQuantity()
+Cart::getContent()->count()
 
 ## To list the products added to the cart
 
-$cart = \Cart::getContent();
+\Cart::getContent()
+
+## remove item from cart by id
+
+\Cart::remove($itemId)
+
+## add item to cart
+
+\Cart::add([
+            'id' => $product->id,
+            'name' => $product->name,
+            'price' => $product->price,
+            'quantity' => $request->quantity,
+        ]);
